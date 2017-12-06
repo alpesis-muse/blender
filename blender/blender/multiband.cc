@@ -1,6 +1,6 @@
 #include "multiband.hh"
-#include "lib/imgproc.hh"
-#include "feature/gaussian.hh"
+#include "../utils/imgproc.hh"
+#include "../feature/gaussian.hh"
 
 using namespace std;
 

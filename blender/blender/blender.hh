@@ -1,11 +1,10 @@
 #pragma once
 #include <vector>
 #include <functional>
-#include "lib/mat.h"
-#include "lib/geometry.hh"
-#include "lib/color.hh"
+#include "../utils/mat.h"
+#include "../utils/geometry.hh"
+#include "../utils/color.hh"
 #include "imageref.hh"
-#include "common/common.hh"
 
 class BlenderBase {
 	public:

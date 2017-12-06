@@ -1,8 +1,7 @@
 #pragma once
 
 #include "blender.hh"
-#include "lib/matrix.hh"
-#include "common/common.hh"
+#include "../utils/matrix.hh"
 
 class MultiBandBlender : public BlenderBase {
 	struct WeightedPixel {
