@@ -1,10 +1,13 @@
 #pragma once
 #include <vector>
 #include <functional>
-#include "../utils/mat.h"
-#include "../utils/geometry.hh"
-#include "../utils/color.hh"
+#include "lib/mat.h"
+#include "lib/geometry.hh"
+#include "lib/color.hh"
 #include "imageref.hh"
+#include "common/common.hh"
+
+namespace blender {
 
 class BlenderBase {
 	public:
@@ -71,3 +74,4 @@ class LinearBlender : public BlenderBase {
 	void debug_run(int w, int h);
 };
 
+}

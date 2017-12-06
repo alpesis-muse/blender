@@ -1,9 +1,9 @@
 #include "multiband.hh"
-#include "../utils/imgproc.hh"
-#include "../feature/gaussian.hh"
+#include "lib/imgproc.hh"
+#include "feature/gaussian.hh"
 
 using namespace std;
-
+namespace blender {
 void MultiBandBlender::add_image(
 			const Coor& upper_left,
 			const Coor& bottom_right,
@@ -146,3 +146,6 @@ void MultiBandBlender::create_next_level(int level) {
 	REP(i, (int)images.size())
 		next_lvl_images[i].img = blurer.blur(images[i].img);
 }
+
+
+}	

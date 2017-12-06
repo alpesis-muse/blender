@@ -1,10 +1,9 @@
-//File: homography.hh
-//Author: Yuxin Wu <ppwwyyxx@gmail.com>
-
 #pragma once
-#include "../utils/matrix.hh"
-#include "../utils/geometry.hh"
+#include "lib/matrix.hh"
+#include "lib/geometry.hh"
+#include "common/common.hh"
 
+namespace blender {
 
 struct Shape2D;
 class Homography;
@@ -162,3 +161,4 @@ class Homography {
 
 };
 
+}

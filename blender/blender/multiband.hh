@@ -1,7 +1,10 @@
 #pragma once
 
 #include "blender.hh"
-#include "../utils/matrix.hh"
+#include "lib/matrix.hh"
+#include "common/common.hh"
+
+namespace blender {
 
 class MultiBandBlender : public BlenderBase {
 	struct WeightedPixel {
@@ -85,3 +88,5 @@ class MultiBandBlender : public BlenderBase {
 
 	Mat32f run() override;
 };
+
+}

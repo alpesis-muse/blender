@@ -1,12 +1,14 @@
-
 #pragma once
 #include <memory>
 #include <vector>
 
-#include "../utils/mat.h"
-#include "../utils/utils.hh"
-#include "../utils/timer.hh"
+#include "lib/mat.h"
+#include "lib/utils.hh"
+#include "lib/timer.hh"
+#include "common/common.hh"
+#include "feature/border.hh"
 
+namespace blender {
 
 class GaussCache {
 	public:
@@ -109,3 +111,6 @@ class MultiScaleGaussianBlur {
 	Mat32f blur(const Mat32f& img, int n) const
 	{ return gauss[n - 1].blur(img); }
 };
+
+
+}

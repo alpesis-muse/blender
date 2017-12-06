@@ -1,23 +1,23 @@
-
 #include "homography.hh"
 
 #include <Eigen/Dense>
 #include <vector>
 
-#include "../utils/matrix.hh"
-#include "../utils/polygon.hh"
+#include "lib/matrix.hh"
+#include "lib/polygon.hh"
 #include "match_info.hh"
 
 using namespace std;
 
 namespace {
 inline Eigen::Map<Eigen::Matrix<double, 3, 3, Eigen::RowMajor>>
-	to_eigenmap(const Homography& m) {
+	to_eigenmap(const blender::Homography& m) {
 		return Eigen::Map<Eigen::Matrix<double, 3, 3, Eigen::RowMajor>>(
 				(double*)m.data, 3, 3);
 	}
 }
 
+namespace blender {
 
 Homography Homography::inverse(bool* succ) const {
 	using namespace Eigen;
@@ -84,4 +84,6 @@ std::vector<Vec2D> overlap_region(
 	}
 	auto ret = convex_hull(pts2in1);
 	return ret;
+}
+
 }

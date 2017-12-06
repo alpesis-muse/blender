@@ -1,11 +1,14 @@
 #include <algorithm>
 #include <cmath>
 #include "gaussian.hh"
-#include "../config.hh"
-#include "../utils/utils.hh"
-#include "../utils/timer.hh"
+#include "lib/config.hh"
+#include "lib/utils.hh"
+#include "lib/timer.hh"
 using namespace std;
+using namespace config;
 
+
+namespace blender {
 
 GaussCache::GaussCache(float sigma) {
 	// TODO decide window size ?
@@ -30,4 +33,8 @@ GaussCache::GaussCache(float sigma) {
 	kernel[0] = fac;
 	for (int i = 1; i <= center; i ++)
 		kernel[-i] = (kernel[i] *= fac);
+}
+
+
+
 }

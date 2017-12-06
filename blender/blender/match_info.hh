@@ -3,9 +3,11 @@
 #include <vector>
 #include <iostream>
 
-#include "../utils/geometry.hh"
+#include "lib/geometry.hh"
 #include "homography.hh"
+#include "common/common.hh"
 
+namespace blender {
 
 struct MatchInfo {
 	// coordinate is half-shifted
@@ -73,3 +75,4 @@ struct Shape2D {
 	}
 };
 
+}

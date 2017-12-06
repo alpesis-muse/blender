@@ -1,11 +1,12 @@
-
 #pragma once
 #include <string>
 #include <memory>
-#include "../utils/mat.h"
-#include "../utils/imgproc.hh"
+#include "lib/mat.h"
+#include "lib/imgproc.hh"
 #include "match_info.hh"
+#include "common/common.hh"
 
+namespace blender {
 // A transparent reference to a image in file
 struct ImageRef {
   std::string fname;
@@ -31,3 +32,5 @@ struct ImageRef {
   Shape2D shape() const { return {_width, _height}; }
 
 };
+
+}

@@ -1,12 +1,13 @@
 #include "blender.hh"
 
 #include <iostream>
-#include "../config.hh"
-#include "../utils/imgproc.hh"
-#include "../utils/timer.hh"
-
+#include "lib/config.hh"
+#include "lib/imgproc.hh"
+#include "lib/timer.hh"
 using namespace std;
+using namespace config;
 
+namespace blender {
 
 void LinearBlender::add_image(
 			const Coor& upper_left,
@@ -27,7 +28,7 @@ Mat32f LinearBlender::run() {
 					auto color = interpolate(*img.imgref.img, r, c); \
 					if (color.x < 0) continue; \
 					float	w = 0.5 - fabs(c / img.imgref.width() - 0.5); \
-					if (not ORDERED_INPUT) /* blend both direction */\
+					if (not config::ORDERED_INPUT) /* blend both direction */\
 						w *= (0.5 - fabs(r / img.imgref.height() - 0.5)); \
 					color *= w
 
@@ -89,4 +90,6 @@ Mat32f LinearBlender::run() {
 		}
 	}
 	return target;
+}
+
 }
