@@ -3,3 +3,6 @@
 *.swn
 *.swo
 *.swm
+
+# build
+_build
