@@ -1,4 +1,6 @@
+#include "lib/mat.h"
 #include "lib/timer.hh"
+#include "blender/imageref.hh"
 #include "blender/multiband.hh"
 
 #define MULTIBAND 3
@@ -10,13 +12,18 @@ int main()
 {
 	GuardedTimer tm("blender");
 
+	const Coor top_left = Coor(457, 17);
+	const Coor bottom_right = Coor(1848, 114);
+	ImageRef imgptr = {"data/example-data/CMU0/medium03.JPG"};
+	imgptr.load();
+
 	if (MULTIBAND > 0)
 		MultiBandBlender blender(MULTIBAND);
 	else
 		LinearBlender blender();
-	
-	// blender.add_image();
-	// blender.run();
+
+	blender.add_image(top_left, bottom_right, imgptr, [](Coor t) -> Vec2D { return Vec2D{-10, -10}; });
+	blender.run();
 
 /*
     Coor top_left = scale_coor_to_img_coor(cur.range.min);
